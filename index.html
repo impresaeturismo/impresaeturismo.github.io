@@ -55,13 +55,27 @@
 
 <script>
 
+function casuale(x){
+  // x is an array
+  rnd = Math.floor(Math.random()*x.length)
+  return rnd
+}
+
+
+
 euro = ['Italia','Francia','Germania','Spagna','Grecia','Lussemburgo','Estonia','Lettonia','Slovacchia','Slovenia','Austria','Belgio','Paesi Bassi','Cipro','Malta','Portogallo']
+
+num = casuale(euro)
+paese = euro[num]
+
+
+euro.splice(num,1)
 
 
 risposta1 = 'diretto'; // rapporto tra € e $ diretto indiretto?
 risposta2 = '4'; // quanto fa 2+2?
-risposta3 = euro.pop(Math.floor(Math.random()*euro.length));
-document.write(risposta3)
+risposta3 = paese;
+
 sbagli = ["NO","Errore","Riprova","Non è esatto","Non è corretto"]
 esatto = ["Giusto","Corretto","Risposta esatta","È esatto","È corretto"]
 
