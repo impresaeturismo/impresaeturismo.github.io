@@ -11,7 +11,7 @@
   </head>
   
 <style>
-  body      {background-color: gray; color : white; }
+  body      {background-color: gray; color : darkblue; }
   ol        {background: #ff9999; padding: 20px; }
   ul        {background: #3399ff; padding: 20px; }
   ol li     {background: #ffe5e5; padding: 5px; margin-left: 35px; }
@@ -19,7 +19,7 @@
   ul dd     {color : white; }
   .book     {color : yellow; }
   .mine     {color : lightblue; }
-  div       {display:block; color:lightblue; }
+  div       {display:block; color:orange; }
   .centered {text-align: center; }
   .black {color:darkblue;}
 </style>
@@ -52,6 +52,55 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfI8HZWmfsJBAhv2theGmQfTPqNzsxJSzHPLXh_7N8zS75dkQ/viewform">Esercizio sulla fattura</a>
     </li>
   </ul>
+
+<script>
+
+euro = ['Italia','Francia','Germania','Spagna','Grecia','Lussemburgo','Estonia','Lettonia','Slovacchia','Slovenia','Austria','Belgio','Paesi Bassi','Cipro','Malta','Portogallo']
+
+
+risposta1 = 'diretto' // rapporto tra € e $ diretto indiretto?
+risposta2 = '4' // quanto fa 2+2?
+risposta3 = euro.pop(Math.random()*euro.length)
+
+
+function risposta(risposta,giusta){
+  if (risposta == giusta){
+    alert("Ok")
+  }
+  else {alert("No, era " + riposta);}
+};
+
+</script>
+
+
+<div><table style="background:'cyan'">
+<td>D: Il cambio tra euro e dollaro è diretto o indiretto?</td><tr>
+<td><input id='r1' type='text'></td><tr>
+<td><button onClick='risposta(r1.value,risposta1)''>Invia</button></td>
+</table></div>
+
+<br />
+
+<div><table>
+<td>D: Quanto fa 2 + 2?</td><tr>
+<td><input id='r2' type='text'></td><tr>
+<td><button onClick='risposta(r2.value,risposta2)''>Invia</button></td>
+</table></div>
+
+<br />
+
+<div><table>
+<td>D: Quale paese che adotta l'euro manca?
+<script>
+for (i of euro){document.write(i+" - ")}
+</script>
+</td><tr>
+<td><input id='r3' type='text'></td><tr>
+<td><button onClick='risposta(r3.value,risposta3)''>Invia</button></td>
+</table></div>
+
+
+
 
 
     <footer class="site-footer">
