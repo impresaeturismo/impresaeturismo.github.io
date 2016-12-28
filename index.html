@@ -58,17 +58,22 @@
 euro = ['Italia','Francia','Germania','Spagna','Grecia','Lussemburgo','Estonia','Lettonia','Slovacchia','Slovenia','Austria','Belgio','Paesi Bassi','Cipro','Malta','Portogallo']
 
 
-risposta1 = 'diretto' // rapporto tra € e $ diretto indiretto?
-risposta2 = '4' // quanto fa 2+2?
-risposta3 = euro.pop(Math.random()*euro.length)
+risposta1 = 'diretto'; // rapporto tra € e $ diretto indiretto?
+risposta2 = '4'; // quanto fa 2+2?
+risposta3 = euro.pop(Math.floor(Math.random()*euro.length));
+document.write(risposta3)
+sbagli = ["NO","Errore","Riprova","Non è esatto","Non è corretto"]
+esatto = ["Giusto","Corretto","Risposta esatta","È esatto","È corretto"]
 
 
-function risposta(risposta,giusta){
+function risposta(risposta,giusta,feedbackdiv){
   if (risposta == giusta){
-    alert("Ok")
+    feedbackdiv.innerHTML = esatto[(Math.floor(Math.random()*sbagli.length))];
   }
-  else {alert("No, era " + riposta);}
-};
+  else {
+    feedbackdiv.innerHTML = sbagli[(Math.floor(Math.random()*sbagli.length))];
+  }
+}
 
 </script>
 
@@ -76,7 +81,9 @@ function risposta(risposta,giusta){
 <div><table style="background:'cyan'">
 <td>D: Il cambio tra euro e dollaro è diretto o indiretto?</td><tr>
 <td><input id='r1' type='text'></td><tr>
-<td><button onClick='risposta(r1.value,risposta1)''>Invia</button></td>
+<td><button onClick='risposta(r1.value,risposta1,fb1)''>Invia</button>
+<div id='fb1'>[?]</div>
+</td>
 </table></div>
 
 <br />
@@ -84,19 +91,25 @@ function risposta(risposta,giusta){
 <div><table>
 <td>D: Quanto fa 2 + 2?</td><tr>
 <td><input id='r2' type='text'></td><tr>
-<td><button onClick='risposta(r2.value,risposta2)''>Invia</button></td>
+<td><button onClick='risposta(r2.value,risposta2,fb2)''>Invia</button>
+<div id='fb2'>[?]</div>
+</td>
 </table></div>
 
 <br />
 
+<img src="img/eurolandia.png"
 <div><table>
+<tr>
 <td>D: Quale paese che adotta l'euro manca?
 <script>
 for (i of euro){document.write(i+" - ")}
 </script>
 </td><tr>
 <td><input id='r3' type='text'></td><tr>
-<td><button onClick='risposta(r3.value,risposta3)''>Invia</button></td>
+<td><button onClick='risposta(r3.value,risposta3,fb3)''>Invia</button>
+<div id='fb3'>[?]</div>
+</td>
 </table></div>
 
 
